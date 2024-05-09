@@ -5,7 +5,7 @@ The Ancient Rome Quiz Application is a web-based platform designed to test users
 The application is built using React for the frontend and is supported by a backend server that provides a curated selection of quiz questions.
 
 # Clone the Repository
-### `git clone [https://github.com/saikumar05g2/quiz.git](https://github.com/saikumar05g2/quiz.git)`
+### `git clone https://github.com/saikumar05g2/quiz.git`
 
 Open the cloned repository in Visual Studio Code.
 
