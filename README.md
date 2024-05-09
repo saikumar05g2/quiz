@@ -24,22 +24,22 @@ Upon completion of the quiz or expiry of time for all questions, the application
 3. Score points for each correct answer.
 4. View your final score at the end of the quiz.
 
-# Clone the Repository
+### Clone the Repository
 ### `git clone https://github.com/saikumar05g2/quiz.git`
 
 Open the cloned repository in Visual Studio Code.
 
 Ensure you have Node.js version 20 installed.
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-# Install Dependencies
+### Install Dependencies
 
 ### `npm install`
 
-# Run the Project
+### Run the Project
 
 ### `npm start`
 
