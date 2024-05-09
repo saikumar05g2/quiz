@@ -2,8 +2,6 @@
 
 The Ancient Rome Quiz Application is a web-based platform designed to test users' knowledge about Ancient Rome. This interactive quiz features questions related to various aspects of Ancient Roman history, culture, and society.
 
-The application is built using React for the frontend and is supported by a backend server that provides a curated selection of quiz questions.
-
 ### Key Features:
 
 ### Start Quiz Button: 
