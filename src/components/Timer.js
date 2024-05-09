@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { IoTimeOutline } from "react-icons/io5";
 
 const Timer = ({ handleTimeUp }) => {
   const [time, setTime] = useState(20);
@@ -20,7 +21,7 @@ const Timer = ({ handleTimeUp }) => {
     setTime(20); // Reset timer when question changes
   }, [handleTimeUp]);
 
-  return <div>{time} seconds remaining</div>;
+  return <div className='timer'><IoTimeOutline /> <span className='time'>{time}s</span></div>;
 };
 
 export default Timer;

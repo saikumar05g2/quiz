@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Question from './Question';
-import Result from './Result';
-import { questions } from './Data';
+import React, { useState, useEffect, useCallback } from "react";
+import Question from "./Question";
+import Result from "./Result";
+import { questions } from "./Data";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -10,31 +10,34 @@ const Quiz = () => {
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [timeUp, setTimeUp] = useState(false);
+  const [selectedQuestions, setSelectedQuestions] = useState([]);
+
+  useEffect(() => {
+    const shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+    setSelectedQuestions(shuffledQuestions.slice(0, 5));
+  }, []);
 
   useEffect(() => {
     let timer;
-    
     if (timeUp) {
-        // setShowCorrectAnswer(true);
-        timer = setTimeout(() => {
-            setShowCorrectAnswer(false);
-            setCurrentQuestion(currentQuestion + 1);
-            setTimeUp(false);
-        }, 1000);
+      timer = setTimeout(() => {
+        setShowCorrectAnswer(false);
+        setCurrentQuestion(currentQuestion + 1);
+        setTimeUp(false);
+      }, 1000);
     }
 
-    if (currentQuestion < questions.length) {
-        timer = setTimeout(() => {
-            setShowHint(true);
-        }, 10000);
+    if (currentQuestion < selectedQuestions.length) {
+      timer = setTimeout(() => {
+        setShowHint(true);
+      }, 10000);
     }
 
     return () => clearTimeout(timer);
-}, [timeUp, currentQuestion]);
-
+  }, [timeUp, currentQuestion, selectedQuestions]);
 
   const handleAnswer = (selectedAnswer) => {
-    if (selectedAnswer === questions[currentQuestion].answer_index) {
+    if (selectedAnswer === selectedQuestions[currentQuestion].answer_index) {
       setScore(score + 1);
     }
     setShowHint(false);
@@ -44,15 +47,18 @@ const Quiz = () => {
     setShowHint(false);
     setShowCorrectAnswer(true);
     setTimeUp(true);
-  },[timeUp]);
+  }, [timeUp]);
 
   const renderQuiz = () => {
-    if (currentQuestion >= questions.length) {
+    if (selectedQuestions.length === 0) {
+      return <div>Loading...</div>;
+    }
+    if (currentQuestion >= selectedQuestions.length) {
       setQuizCompleted(true);
     } else {
       return (
         <Question
-          question={questions[currentQuestion]}
+          question={selectedQuestions[currentQuestion]}
           showHint={showHint}
           showCorrectAnswer={showCorrectAnswer}
           handleAnswer={handleAnswer}
@@ -65,7 +71,7 @@ const Quiz = () => {
   return (
     <div>
       {quizCompleted ? (
-        <Result score={score} totalQuestions={questions.length} />
+        <Result score={score} totalQuestions={selectedQuestions.length} />
       ) : (
         renderQuiz()
       )}
