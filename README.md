@@ -15,7 +15,7 @@ Users face a series of 5 multiple-choice questions about ancient Rome, each acco
 ### Countdown Timer: 
 Each question has a 20-second countdown timer. After 10 seconds, the hint is presented. Once the time ends, the correct answer is shown for 1 second before proceeding to the next question.
 ### Scoring System: 
-Upon completion of the quiz or expiry of time for all questions, the application displays the user's score as X out of Y questions answered correctly or 1 point for each correct answer.
+Upon completion of the quiz or expiry of time for all questions, the application displays the user's score.
 
 ### Usage:
 
