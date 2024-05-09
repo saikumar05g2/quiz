@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import './App.css';
-import Quiz from './components/Quiz';
+import React, { useState } from "react";
+import "./App.css";
+import Quiz from "./components/Quiz";
+import StartQuiz from "./components/StartQuiz";
 
 function App() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -11,11 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      {!quizStarted ? (
-        <button onClick={startQuiz}>Start Quiz</button>
-      ) : (
-        <Quiz />
-      )}
+      {!quizStarted ? <StartQuiz startQuiz={startQuiz} /> : <Quiz />}
     </div>
   );
 }

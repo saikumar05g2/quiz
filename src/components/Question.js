@@ -9,7 +9,6 @@ const Question = ({
   handleTimeUp,
 }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-
   useEffect(() => {
     setSelectedAnswer(null);
   }, [question]);
@@ -25,7 +24,7 @@ const Question = ({
   return (
     <div className="question-container">
       <div className="question-header">
-        <div>QUIZ</div>
+        <div>Ancient Rome Quiz</div>
         <span>
           <Timer handleTimeUp={handleTimeUp} />
         </span>
