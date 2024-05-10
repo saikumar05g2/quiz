@@ -31,7 +31,6 @@ const Question = ({
       </div>
       <div className="question">
         <h2>{question.question}</h2>
-
         <ul className="options">
           {question.choices.map((choice, index) => (
             <li key={index}>

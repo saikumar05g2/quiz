@@ -11,7 +11,6 @@ const Result = ({ score, totalQuestions, handleQuiz }) => {
           <TiTick color="green" size={40} />
           <h2> Quiz Completed!</h2>
         </div>
-
         <p>
           Your score: {score} out of {totalQuestions}
         </p>

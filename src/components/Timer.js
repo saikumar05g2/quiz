@@ -18,7 +18,7 @@ const Timer = ({ handleTimeUp }) => {
   }, [time, handleTimeUp]);
 
   useEffect(() => {
-    setTime(20); // Reset timer when question changes
+    setTime(20);
   }, [handleTimeUp]);
 
   return <div className='timer'><IoTimeOutline /> <span className='time'>{time}s</span></div>;
